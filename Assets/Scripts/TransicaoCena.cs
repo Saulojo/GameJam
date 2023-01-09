@@ -7,7 +7,8 @@ public class TransicaoCena : MonoBehaviour
     private int cenaIndice;
     Scene scene;
     public int indice;
-
+    public AudioSource SomTransicao;
+    public AudioClip transiction_sound;
 
     private void Update()
     {
@@ -15,19 +16,22 @@ public class TransicaoCena : MonoBehaviour
         {
             scene = SceneManager.GetActiveScene();
             indice = scene.buildIndex;
+            SomTransicao.clip = transiction_sound;
+            SomTransicao.Play();
             IniciaTransicao(indice);
+
         }
 
     }
 
-    //Esse método é chamado em qualquer evento que troque a cena do jogo
+    //Esse mï¿½todo ï¿½ chamado em qualquer evento que troque a cena do jogo
     public void IniciaTransicao(int _cenaIndice)
     {
         cenaIndice = _cenaIndice;
         animator.SetTrigger("Inicia");
     }
 
-    //Esse método é chamado no final da animação
+    //Esse mï¿½todo ï¿½ chamado no final da animaï¿½ï¿½o
     public void TrocaCena()
     {
         SceneManager.LoadScene(cenaIndice+1);
