@@ -5,13 +5,17 @@ public class TransicaoCena : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     private int cenaIndice;
-  
+    Scene scene;
+    public int indice;
+
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            IniciaTransicao(1);
+            scene = SceneManager.GetActiveScene();
+            indice = scene.buildIndex;
+            IniciaTransicao(indice);
         }
 
     }
@@ -26,6 +30,6 @@ public class TransicaoCena : MonoBehaviour
     //Esse método é chamado no final da animação
     public void TrocaCena()
     {
-        SceneManager.LoadScene(cenaIndice);
+        SceneManager.LoadScene(cenaIndice+1);
     }
 }
