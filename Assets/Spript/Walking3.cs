@@ -7,6 +7,8 @@ public class Walking3 : MonoBehaviour
     public float JumpForce;
     public float Speed;
 
+    public AudioSource SomJump;
+    public AudioClip jump_sound;
 
     public bool isJumping;
     public bool doubleJump;
@@ -39,6 +41,8 @@ public class Walking3 : MonoBehaviour
         {
             if(isJumping == false)
             {
+                SomJump.clip = jump_sound;
+                SomJump.Play();
                 rig.AddForce(new Vector2(0f , JumpForce), ForceMode2D.Impulse);
                 doubleJump = true;
                 
@@ -47,6 +51,8 @@ public class Walking3 : MonoBehaviour
             {
                 if(doubleJump)
                 {
+                    SomJump.clip = jump_sound;
+                    SomJump.Play();
                     rig.AddForce(new Vector2(0f , JumpForce), ForceMode2D.Impulse);
                     doubleJump = false;
                 }
