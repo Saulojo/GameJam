@@ -11,7 +11,7 @@ public class TransicaoCena : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             scene = SceneManager.GetActiveScene();
             indice = scene.buildIndex;
@@ -20,14 +20,14 @@ public class TransicaoCena : MonoBehaviour
 
     }
 
-    //Esse método é chamado em qualquer evento que troque a cena do jogo
+    //Esse mï¿½todo ï¿½ chamado em qualquer evento que troque a cena do jogo
     public void IniciaTransicao(int _cenaIndice)
     {
         cenaIndice = _cenaIndice;
         animator.SetTrigger("Inicia");
     }
 
-    //Esse método é chamado no final da animação
+    //Esse mï¿½todo ï¿½ chamado no final da animaï¿½ï¿½o
     public void TrocaCena()
     {
         SceneManager.LoadScene(cenaIndice+1);
