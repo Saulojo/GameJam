@@ -7,7 +7,8 @@ public class TransicaoCena : MonoBehaviour
     private int cenaIndice;
     Scene scene;
     public int indice;
-
+    public AudioSource SomTransicao;
+    public AudioClip transiction_sound;
 
     private void Update()
     {
@@ -15,7 +16,10 @@ public class TransicaoCena : MonoBehaviour
         {
             scene = SceneManager.GetActiveScene();
             indice = scene.buildIndex;
+            SomTransicao.clip = transiction_sound;
+            SomTransicao.Play();
             IniciaTransicao(indice);
+
         }
 
     }
