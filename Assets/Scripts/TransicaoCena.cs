@@ -4,15 +4,17 @@ using UnityEngine.SceneManagement;
 public class TransicaoCena : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    private int cenaIndice;
+    public int cenaIndice;
     Scene scene;
     public int indice;
     public AudioSource SomTransicao;
     public AudioClip transiction_sound;
 
-    private void Update()
+
+    public void OnTriggerEnter2D(Collider2D colision)
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+
+        if (colision.CompareTag("portal") == true)
         {
             scene = SceneManager.GetActiveScene();
             indice = scene.buildIndex;
@@ -21,9 +23,9 @@ public class TransicaoCena : MonoBehaviour
             IniciaTransicao(indice);
 
         }
-
     }
 
+    
     //Esse m�todo � chamado em qualquer evento que troque a cena do jogo
     public void IniciaTransicao(int _cenaIndice)
     {

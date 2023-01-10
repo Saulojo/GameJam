@@ -117,7 +117,7 @@ AnimationClip:
   - time: 1
     functionName: TrocaCena
     data: 
-    objectReferenceParameter: {fileID: 9100000, guid: 939247a0abb5ff540903c0ffe2a4ec48, type: 2}
+    objectReferenceParameter: {fileID: 7775411145941325672, guid: a36c9c2151e69954bb68907c88544f4d, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
