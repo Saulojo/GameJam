@@ -11,7 +11,7 @@ public class TransicaoCena : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             scene = SceneManager.GetActiveScene();
             indice = scene.buildIndex;
